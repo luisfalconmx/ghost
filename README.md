@@ -2,8 +2,8 @@
   <img src="./docs/images/ghost-logo.png" width="260px" />
 </p>
 
-<h3 align="center">Best headless cms blog platform</h3>
-<h4 align="center">Ghost is the fast, modern WordPress alternative, focused completely on professional publishing.</h4>
+<h3 align="center">La mejor plataforma de blogs de cms sin cabeza</h3>
+<h4 align="center">Ghost es la alternativa rápida y moderna a WordPress, centrada completamente en la publicación profesional.</h4>
 <br>
 <p align="center">
   <img src="https://img.shields.io/badge/ghost-3.41.7-738A94?style=for-the-badge&logo=ghost&labelColor=20232a" />
@@ -20,7 +20,7 @@
 
 <br><br>
 
-# Getting Started
+# Empezando
 
 Este proyecto esta enfocado en utilizar ghost unicamente. La base de datos y el servidor de almacenamiento de archivos estaticos se utilizaran como microservicios. Digitalocean Spaces será el microservicio necesario para poder utilizar la imagen de docker.
 
