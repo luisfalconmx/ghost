@@ -1,0 +1,11 @@
+version: "3.1"
+
+services:
+  ghost:
+    image: ghost:3-alpine
+    restart: always
+    command: sh -c 'sh -c "npx ghata --auto" && node current/index.js'
+    ports:
+      - 2368:2368
+    environment:
+      url: http://localhost:2368
