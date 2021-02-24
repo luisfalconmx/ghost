@@ -10,7 +10,7 @@ jobs:
     name: Build
     runs-on: ubuntu-20.04
     steps:
-      - name: Set env
+      - name: Set Release Version
         run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
 
       - name: Set up QEMU
@@ -25,13 +25,6 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Login to GitHub Packages Docker Registry
-        uses: docker/login-action@v1
-        with:
-          registry: docker.pkg.github.com
-          username: ${{ github.REPOSITORY_OWNER }}
-          password: ${{ secrets.REPOSITORY_TOKEN }}
-
       - name: Build and push to Dockerhub
         id: dockerhub_build
         uses: docker/build-push-action@v2
@@ -40,8 +33,6 @@ jobs:
           tags: |
             luisfalconmx/ghost:latest
             luisfalconmx/ghost:${{ env.RELEASE_VERSION }}
-            luisfalconmx/ghost/ghost:latest
-            luisfalconmx/ghost/ghost:${{ env.RELEASE_VERSION }}
 
       - name: Image digest
         run: echo ${{ steps.dockerhub_build.outputs.digest }}
