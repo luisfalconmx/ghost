@@ -51,11 +51,11 @@ luisfalconmx/ghost:latest
 
 Para poder utilizar la imagen de este proyecto se necesitan cumplir los siguientes requerimientos.
 
-- Docker instalado en tu computador o en tu servidor.
-- Docker compose instalado en tu computador.
-- Una cuenta en digitalocean.
-- Un dominio
-- Un servidor de MySQL 5.7 o 8
+- [Docker instalado en tu computador o en tu servidor](https://docs.docker.com/engine/install/)
+- [Docker compose instalado en tu computador](https://docs.docker.com/compose/install/)
+- [Una cuenta en digitalocean](https://m.do.co/c/7bc25760857e)
+- [Un dominio](https://www.namecheap.com/)
+- [Un servidor de MySQL 5.7 o 8](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04)
 
 <br>
 
@@ -149,11 +149,15 @@ En los requerimientos se especifico que necesitamos un servidor de mysql 5.7 o 8
 
 En esta guia no cubriremos el paso a paso de como crear un servidor de mysql pero te dejo un articulo oficial de digitalocean para que puedas crearlo.
 
+https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04
+
 <br>
 
 ### Obtener las credenciales de las bases de datos autoadministradas
 
 Si usas las bases de datos autoadministradas de digitalocean tendras en tu panel las credenciales que necesitas para conectarte pero antes tendras que configurar dos cosas.
+
+![Digitalocean bases de datos autoadministradas](./docs/images/do-database-01.png)
 
 1 - Se debera crear un nuevo usuario con la opcion "Password Encryption" en "Legacy - MySQL 5.x"
 
@@ -161,9 +165,11 @@ Si usas las bases de datos autoadministradas de digitalocean tendras en tu panel
 
 2 - Necesitaras modificar la variable de mysql `sql_require_primary_key` al valor `sql_require_primary_key = off` pero este proceso no lo podrás hacer por tu cuenta. Tendras que abrir un ticket en soporte de digitalocean solicitando este cambio.
 
-Una vez que cumplas los pasos anteriores podremos usar los siguientes datos para usarlas en las variables de entorno.
+![Digitalocean bases de datos autoadministradas](./docs/images/do-support-01.png)
 
-![Digitalocean conectar la base de datos 1](./docs/images/do-database-01.png)
+Una vez que cumplas los pasos anteriores vamos al panel principal de nuestra base de datos autoadministrada y seleccionamos al usuario que creamos para que podamos ver las credenciales.
+
+![Digitalocean conectar la base de datos 1](./docs/images/do-database-02.png)
 
 Con los datos anteriores podremos llenar los datos de la siguiente manera. Recuerda usar los datos de tu servidor de mysql.
 
