@@ -38,10 +38,10 @@ jobs:
         with:
           push: true
           tags: |
-            luisfalconmx/strapi:latest
-            luisfalconmx/strapi:${{ env.RELEASE_VERSION }}
-            luisfalconmx/strapi/strapi:latest
-            luisfalconmx/strapi/strapi:${{ env.RELEASE_VERSION }}
+            luisfalconmx/ghost:latest
+            luisfalconmx/ghost:${{ env.RELEASE_VERSION }}
+            luisfalconmx/ghost/ghost:latest
+            luisfalconmx/ghost/ghost:${{ env.RELEASE_VERSION }}
 
       - name: Image digest
         run: echo ${{ steps.dockerhub_build.outputs.digest }}
